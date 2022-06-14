@@ -1,5 +1,5 @@
 <script>
-    let todos = [...Array(50000)].map((_, index) => {
+    let todos = [...Array(20000)].map((_, index) => {
             return {
                 task: `Task ${index} です`,
                 isCompleted: false,
