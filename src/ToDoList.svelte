@@ -1,5 +1,5 @@
 <script>
-    let todos = [...Array(10000)].map((_, index) => {
+    let todos = [...Array(50000)].map((_, index) => {
             return {
                 task: `Task ${index} です`,
                 isCompleted: false,
@@ -32,13 +32,11 @@ Add Task : <input placeholder="Add New Task" bind:this={newTaskInput}/>
     {#each todos as todo, index}
         <li key={index}
             style="text-decoration-line: {todo.isCompleted ? 'line-through' : 'none'}">
-            <input type="checkbox" bind:value={todo.isCompleted}/>
+            <input type="checkbox" bind:checked={todo.isCompleted}/>
             {todo.task}&nbsp;
-            <span 
-                on:click={() => handleRemoveTask(index)}
-                style="cursor: pointer">
+            <button on:click={() => handleRemoveTask(index)}>
                 X
-            </span>
+            </button>
         </li>
     {/each}
 </ul>
